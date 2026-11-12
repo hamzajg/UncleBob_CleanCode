@@ -42,6 +42,25 @@ class DiscountPolicyTest {
     }
 
     @Test
+    void takesAFixedAmountOff() {
+        DiscountPolicy policy = DiscountPolicy.fixedOff(Money.of("5.00"));
+
+        assertEquals(Money.of("5.00"), policy.discountFor(Money.of("40.00")));
+    }
+
+    @Test
+    void aFixedAmountIsCappedAtTheSubtotal() {
+        DiscountPolicy policy = DiscountPolicy.fixedOff(Money.of("50.00"));
+
+        assertEquals(Money.of("30.00"), policy.discountFor(Money.of("30.00")));
+    }
+
+    @Test
+    void aFixedAmountTakesNothingOffWhenItIsZero() {
+        assertEquals(Money.ZERO, DiscountPolicy.fixedOff(Money.ZERO).discountFor(Money.of("12.34")));
+    }
+
+    @Test
     void rejectsAPercentageOutsideZeroToOneHundred() {
         assertThrows(IllegalArgumentException.class,
                 () -> DiscountPolicy.percentageAbove(Money.ZERO, -1));

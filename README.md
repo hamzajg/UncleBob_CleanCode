@@ -27,7 +27,7 @@ Total                                    113.29
 Requires JDK 17 and Maven.
 
 ```bash
-mvn test        # 36 tests
+mvn test        # 39 tests
 mvn exec:java   # print the receipt above
 ```
 
@@ -108,7 +108,7 @@ tested explicitly (`MoneyTest.roundsHalfUpToTheNearestCent`,
 
 ### Tests are first-class
 
-36 JUnit 5 tests, one behaviour each, named for the rule they check. They are
+39 JUnit 5 tests, one behaviour each, named for the rule they check. They are
 grouped by the class they test, and the checkout tests are written from the
 outside — `pricesADiscountedCart` asserts the four numbers a user would look
 at, not the internals that produced them.
@@ -123,7 +123,8 @@ pins the snapshot behaviour of `Receipt`.
 src/main/java/com/hamzajg/cleancode/
   money/Money.java               integer cents, validated, immutable
   pricing/LineItem.java          a cart line; rejects bad quantities
-  pricing/DiscountPolicy.java    one named rule, composable by the caller
+  pricing/DiscountPolicy.java    one named rule: a percentage above a threshold,
+                                 or a fixed amount capped at the subtotal
   pricing/TaxRate.java           basis points, exact for 8.5%
   checkout/Checkout.java         cart -> receipt, one statement per step
   checkout/Receipt.java          immutable snapshot of the result
