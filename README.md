@@ -24,7 +24,7 @@ Total                                    113.29
 
 ## Run it
 
-Requires JDK 17 and Maven.
+Requires JDK 25 and Maven.
 
 ```bash
 mvn test        # 39 tests
@@ -136,7 +136,7 @@ src/test/java/...                one test class per production class
 ## Continuous integration
 
 [`.github/workflows/ci.yml`](.github/workflows/ci.yml) runs `mvn -B verify` on
-JDK 17 for every push and pull request to `master`.
+JDK 25 for every push and pull request to `master`.
 
 ## License
 

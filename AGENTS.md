@@ -9,7 +9,7 @@ code — not a book summary: every section points at a file where the
 practice is applied and the test that holds it. Domain: a checkout —
 price a cart, apply one discount rule, add sales tax, print a receipt.
 Deliberately small; the point is code shape, not features.
-Stack: Java 17 (`maven.compiler.release`), Maven, JUnit 5 (Jupiter),
+Stack: Java 25 (`maven.compiler.release`), Maven, JUnit 5 (Jupiter),
 exec-maven-plugin for the demo.
 
 ## Commands
@@ -22,7 +22,7 @@ Verified 2026-11-13 against CI (`.github/workflows/ci.yml`) and `pom.xml`.
 | Run demo | `mvn -q exec:java` (prints a priced receipt) |
 | Test only | `mvn -B test` |
 
-Requires: JDK 17+ and Maven. `target/` is build output — gitignored
+Requires: JDK 25+ and Maven. `target/` is build output — gitignored
 normally.
 
 ## Architecture
@@ -43,7 +43,7 @@ src/test/java/com/hamzajg/cleancode/
   money/MoneyTest.java
   pricing/{LineItemTest,DiscountPolicyTest,TaxRateTest}.java
   checkout/{CheckoutTest,ReceiptPrinterTest}.java
-pom.xml                        Java 17, junit-jupiter, exec plugin
+pom.xml                        Java 25, junit-jupiter, exec plugin
 ```
 
 Design intent: immutable value objects (`Money`), single-responsibility
@@ -64,7 +64,7 @@ Tax} → Money`, tests mirror main packages.
 ## Landmines
 
 - **Default branch is `master`, not `main`.**
-- Java **17** (`maven.compiler.release`) — not older.
+- Java **25** (`maven.compiler.release`) — not older.
 - `target/` exists locally — build output, don't commit.
 - The example domain is fixed (checkout) — extending it changes the
   teaching example; prefer new files over mutating the canonical ones.

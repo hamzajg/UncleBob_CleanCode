@@ -5,7 +5,7 @@ Current-state map. Descriptive, not aspirational; see `docs/adr/` for why.
 ## Shape
 
 ```
-UncleBob_CleanCode/           Maven single-module (Java 17)
+UncleBob_CleanCode/           Maven single-module (Java 25)
 ├── src/main/java/com/hamzajg/cleancode/
 │   ├── Demo.java                    entry — builds cart, prints receipt
 │   ├── money/Money.java             immutable money value object
@@ -21,7 +21,7 @@ UncleBob_CleanCode/           Maven single-module (Java 17)
 │   ├── money/MoneyTest.java
 │   ├── pricing/{LineItemTest,DiscountPolicyTest,TaxRateTest}.java
 │   └── checkout/{CheckoutTest,ReceiptPrinterTest}.java
-└── pom.xml                    release 17, junit-jupiter, exec plugin
+└── pom.xml                    release 25, junit-jupiter, exec plugin
 ```
 
 ## Pipeline
