@@ -24,7 +24,7 @@ domain — the architecture *is* the lesson.
    noise would obscure the lesson.
 5. **Tests as executable spec.** JUnit 5 per class, mirroring packages.
    Rationale: tests document intended behavior — the Clean Code way.
-6. **Java 17 + Maven.** Modern LTS, standard build. Rationale: current
+6. **Java 25 + Maven.** Current LTS, standard build. Rationale: current
    toolchain without build complexity.
 
 ## Consequences / open questions
